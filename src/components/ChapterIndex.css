@@ -1,0 +1,61 @@
+.chapter-index {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.chapter-index ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.chapter-index li {
+  pointer-events: auto;
+}
+
+.chapter-index a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.chapter-index a:hover,
+.chapter-index li.active a {
+  opacity: 1;
+}
+
+.chapter-line {
+  width: 10px;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.chapter-index li.active .chapter-line {
+  width: 30px;
+  background-color: var(--accent-primary);
+}
+
+.chapter-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  transform: translateX(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.chapter-index li.active .chapter-label,
+.chapter-index a:hover .chapter-label {
+  transform: translateX(0);
+  opacity: 1;
+}

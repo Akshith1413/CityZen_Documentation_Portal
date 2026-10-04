@@ -1,0 +1,55 @@
+.team-section {
+  background-color: var(--bg-tertiary);
+  min-height: 80vh;
+}
+
+.team-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.team-header {
+  flex: 1;
+}
+
+.mb-4 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  font-size: clamp(3rem, 6vw, 7rem);
+  line-height: 0.9;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.team-name:hover {
+  color: var(--accent-primary);
+}
+
+.team-guide {
+  flex: 1;
+  text-align: right;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.team-guide-name {
+  font-size: 2.5rem;
+  font-family: var(--font-display);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .team-container { flex-direction: column; align-items: flex-start; justify-content: center; gap: 4rem; }
+  .team-guide { text-align: left; }
+  .team-name { font-size: 2.5rem; }
+}

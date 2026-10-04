@@ -1,0 +1,58 @@
+.problem-section {
+  background-color: var(--bg-secondary);
+  padding: 20vh 0;
+  height: auto;
+  min-height: 200vh;
+}
+
+.problem-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  line-height: 0.9;
+  margin-bottom: 30vh;
+  position: sticky;
+  top: 20vh;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.problem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50vh;
+  position: relative;
+  z-index: 1;
+  margin-top: -20vh;
+  padding-bottom: 30vh;
+}
+
+.problem-statement {
+  max-width: 800px;
+  margin-left: auto;
+  padding-right: 10vw;
+  transform-origin: left center;
+}
+
+.ps-num {
+  font-size: 1rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.ps-heading {
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.ps-desc {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .problem-statement {
+    margin-left: 0;
+    padding-right: 0;
+  }
+}

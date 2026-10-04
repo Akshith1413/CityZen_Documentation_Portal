@@ -1,0 +1,116 @@
+.hero-section {
+  justify-content: flex-start;
+  padding-top: 15vh;
+  background-color: var(--bg-primary);
+}
+
+.hero-meta {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  max-width: 70%;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6.5vw, 9rem);
+  line-height: 0.85;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--text-secondary);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.hero-blob-container {
+  position: absolute;
+  bottom: 10vh;
+  right: 10%;
+  width: 35vw;
+  height: 35vw;
+  max-width: 500px;
+  max-height: 500px;
+  min-width: 300px;
+  min-height: 300px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  pointer-events: none;
+}
+
+.hero-blob-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent-primary);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(142, 18, 58, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.hero-blob-image {
+  position: absolute;
+  width: 90%; /* Creates padding between border and image */
+  height: 90%;
+  
+  /* Placeholder background - replace the linear-gradient with your image URL later */
+  /* Example: background-image: url('/path/to/your/image.jpg'); */
+  background-image: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  
+  background-size: cover;
+  background-position: center;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: morph 10s ease-in-out infinite alternate-reverse;
+  overflow: hidden;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-blob-image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(142, 18, 58, 0.4), rgba(0, 0, 0, 0.6));
+  mix-blend-mode: multiply;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  33% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  66% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-blob-container {
+    width: 60vw;
+    height: 60vw;
+    right: 20vw;
+    bottom: 5vh;
+  }
+}

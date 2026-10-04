@@ -1,0 +1,98 @@
+.arch-section {
+  background-color: var(--bg-primary);
+}
+
+.arch-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.arch-header {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.arch-header h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.arch-visual {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 2000px;
+  width: 100%;
+  height: 100%;
+}
+
+.arch-stack {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  transform-style: preserve-3d;
+  --tz: 0px;
+  transform: rotateX(15deg) rotateY(-20deg) translateZ(var(--tz));
+}
+
+.arch-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--text-primary);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05), 0 20px 40px rgba(0,0,0,0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.arch-layer:hover {
+  background: white;
+  box-shadow: inset 0 0 20px rgba(142, 18, 58, 0.1), 0 30px 60px rgba(142, 18, 58, 0.1);
+  border-color: var(--accent-primary);
+}
+
+.arch-layer-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-primary);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.5rem;
+}
+
+.arch-layer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.arch-layer-content div {
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border-left: 2px solid var(--text-secondary);
+}
+
+/* Position layers back in Z space so they all start bottom-right */
+.arch-layer-1 { transform: translateZ(-400px); }
+.arch-layer-2 { transform: translateZ(-600px); }
+.arch-layer-3 { transform: translateZ(-800px); }
+.arch-layer-4 { transform: translateZ(-1000px); }
+.arch-layer-5 { transform: translateZ(-1200px); }
+
+@media (max-width: 768px) {
+  .arch-stack { width: 90vw; height: 300px; }
+  .arch-layer { padding: 1rem; }
+  .arch-layer-title { font-size: 1.25rem; }
+  .arch-layer-content div { font-size: 0.8rem; }
+}

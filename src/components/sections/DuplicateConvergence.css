@@ -1,0 +1,70 @@
+.dc-section {
+  background-color: var(--bg-primary);
+}
+
+.dc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 15vh;
+}
+
+.dc-header h2 {
+  font-size: clamp(2rem, 5vw, 6rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.dc-visual {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dc-reports {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+}
+
+.dc-report {
+  position: absolute;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--text-primary);
+  font-size: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  white-space: nowrap;
+}
+
+.dc-master {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  z-index: 10;
+}
+
+.dc-master-header {
+  font-size: 1.25rem;
+  font-family: var(--font-condensed);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .dc-header h2 { font-size: 2.5rem; }
+  .dc-report { font-size: 0.6rem; padding: 0.5rem; }
+}
