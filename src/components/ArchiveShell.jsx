@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChapterIndex } from './ChapterIndex';
 import { Hero } from './sections/Hero';
+import { ProjectObjectives } from './sections/ProjectObjectives';
 import { ProblemStatement } from './sections/ProblemStatement';
+import { ProjectMethodology } from './sections/ProjectMethodology';
 import { Observation } from './sections/Observation';
 import { ImageValidation } from './sections/ImageValidation';
 import { GeometryExperience } from './sections/GeometryExperience';
@@ -62,10 +63,11 @@ export const ArchiveShell = () => {
 
   return (
     <div className="archive-shell">
-      <ChapterIndex />
       <main>
         <Hero />
+        <ProjectObjectives />
         <ProblemStatement />
+        <ProjectMethodology />
         <Observation />
         <ImageValidation />
         <GeometryExperience />
