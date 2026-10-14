@@ -20,6 +20,7 @@ import { EngineeringDecisions } from './sections/EngineeringDecisions';
 import { ProjectStatus } from './sections/ProjectStatus';
 import { Team } from './sections/Team';
 import { Documentation } from './sections/Documentation';
+import { ProjectProgress } from './sections/ProjectProgress';
 import { MediaArchive } from './sections/MediaArchive';
 import { VideoSection } from './sections/VideoSection';
 import { Finale } from './sections/Finale';
@@ -82,6 +83,7 @@ export const ArchiveShell = () => {
         <ProjectStatus />
         <Team />
         <Documentation />
+        <ProjectProgress />
         <MediaArchive />
         <VideoSection />
         <Finale />
