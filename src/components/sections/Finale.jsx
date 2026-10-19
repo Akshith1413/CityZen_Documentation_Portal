@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Finale.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const Finale = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -29,7 +30,7 @@ export const Finale = () => {
         // Final zoom out
         .to(containerRef.current, { scale: 0.8, opacity: 0, duration: 2 });
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

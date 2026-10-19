@@ -77,11 +77,11 @@ export const ProjectObjectives = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.fromTo('.po-header', 
+      gsap.fromTo('.po-header',
         { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
+        {
+          opacity: 1,
+          y: 0,
           duration: 0.8,
           scrollTrigger: {
             trigger: containerRef.current,
@@ -106,7 +106,7 @@ export const ProjectObjectives = () => {
   return (
     <section id="objectives" className="viewport-section po-section" ref={containerRef}>
       <div className="archive-container po-container">
-        
+
         {/* Header */}
         <div className="po-header">
           <div className="po-meta font-mono">
@@ -123,7 +123,7 @@ export const ProjectObjectives = () => {
 
         {/* Dynamic Split Layout */}
         <div className="po-content-grid">
-          
+
           {/* Left Column: Quick Interactive Nav */}
           <div className="po-selector-col">
             <div className="po-list-label font-mono text-secondary">SELECT OBJECTIVE [01–07]</div>
@@ -149,9 +149,9 @@ export const ProjectObjectives = () => {
 
             {/* Step Controls */}
             <div className="po-controls font-mono">
-              <button 
-                type="button" 
-                className="po-ctrl-btn" 
+              <button
+                type="button"
+                className="po-ctrl-btn"
                 onClick={handlePrev}
                 aria-label="Previous Objective"
               >
@@ -160,9 +160,9 @@ export const ProjectObjectives = () => {
               <span className="po-counter text-accent">
                 {String(activeIndex + 1).padStart(2, '0')} / {String(objectivesData.length).padStart(2, '0')}
               </span>
-              <button 
-                type="button" 
-                className="po-ctrl-btn" 
+              <button
+                type="button"
+                className="po-ctrl-btn"
                 onClick={handleNext}
                 aria-label="Next Objective"
               >
@@ -174,7 +174,7 @@ export const ProjectObjectives = () => {
           {/* Right Column: Dynamic Detail Card */}
           <div className="po-showcase-col">
             <div className="po-card depth-layer-1">
-              
+
               <div className="po-card-topbar">
                 <span className="po-card-code font-mono text-accent">{activeObj.code}</span>
                 <span className="po-card-badge font-mono">{activeObj.badge}</span>
@@ -207,7 +207,7 @@ export const ProjectObjectives = () => {
               </div>
 
               <div className="po-card-footer font-mono">
-                <span>SYSTEM STATUS // ACTIVE SPECIFICATION</span>
+                <span>Objectives</span>
                 <span className="po-pulse-dot"></span>
               </div>
 

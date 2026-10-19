@@ -44,11 +44,11 @@
 
 .li-map-abstract {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: min(400px, 46vh);
+  height: min(400px, 46vh);
   border: 1px solid rgba(0,0,0,0.05);
   background: white;
-  margin-bottom: 4rem;
+  margin-bottom: min(4rem, 5vh);
 }
 
 .li-incident-center {
@@ -69,9 +69,9 @@
   background: var(--accent-primary);
 }
 
-.li-radius-1 { width: 100px; height: 100px; }
-.li-radius-2 { width: 250px; height: 250px; }
-.li-radius-3 { width: 450px; height: 450px; border-style: dashed; background: transparent; }
+.li-radius-1 { width: 25%; height: 25%; }
+.li-radius-2 { width: 62.5%; height: 62.5%; }
+.li-radius-3 { width: 112.5%; height: 112.5%; border-style: dashed; background: transparent; }
 
 .li-point {
   position: absolute;
@@ -132,8 +132,48 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
-  .li-container { flex-direction: column; justify-content: center; }
-  .li-map-abstract { width: 300px; height: 300px; }
-  .li-header h2 { font-size: 2.5rem; }
+/* Compact layout: header, then the finished radius map and decay graph */
+@media (max-width: 768px), (max-height: 520px) {
+  .li-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: auto;
+    gap: 2.5rem;
+  }
+
+  .li-header {
+    flex: none;
+  }
+
+  .li-header h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .li-visual {
+    flex: none;
+    height: auto;
+    align-items: stretch;
+  }
+
+  .li-map-abstract {
+    width: min(100%, 340px);
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+  }
+
+  .li-radius-1 { opacity: 0.1; }
+  .li-radius-2 { opacity: 0.05; width: 62%; height: 62%; }
+  .li-radius-3 { opacity: 0.3; width: 94%; height: 94%; }
+
+  .li-point-rural {
+    right: 0.5rem;
+  }
+
+  .li-decay-graph {
+    max-width: none;
+  }
 }

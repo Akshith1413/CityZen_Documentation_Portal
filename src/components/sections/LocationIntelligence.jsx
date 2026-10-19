@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './LocationIntelligence.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const LocationIntelligence = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -30,7 +31,7 @@ export const LocationIntelligence = () => {
         .fromTo('.li-point-rural', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, 1.5)
         .fromTo('.li-decay-curve', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1 }, 2);
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

@@ -50,8 +50,7 @@
 }
 
 .iv-image-container {
-  width: 100%;
-  max-width: 450px;
+  width: min(100%, 450px, calc(80vh * 0.75));
   aspect-ratio: 3/4;
   position: relative;
   background: white;
@@ -116,6 +115,12 @@
   right: -20%;
 }
 
+/* Narrower screens: keep the callouts from hanging past the viewport edge */
+@media (max-width: 1200px) {
+  .iv-annotation-1 { left: -1.25rem; }
+  .iv-annotation-2 { right: -1.25rem; }
+}
+
 .iv-result {
   position: absolute;
   bottom: -2rem;
@@ -129,17 +134,61 @@
   border: 1px solid var(--accent-primary);
 }
 
-@media (max-width: 768px) {
+/* Compact layout: text first, then the finished validation result (no scan) */
+@media (max-width: 768px), (max-height: 520px) {
   .iv-container {
     flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: auto;
+    gap: 2.5rem;
   }
+
+  .iv-text-col {
+    flex: none;
+    max-width: none;
+  }
+
   .iv-headline {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
   }
-  .iv-annotation-1 { left: 0; }
-  .iv-annotation-2 { right: 0; }
-  .iv-image-container { max-width: 300px; }
+
+  .iv-visual-col {
+    flex: none;
+    padding-bottom: 1.25rem; /* room for the result badge that overhangs the image */
+  }
+
+  .iv-image-container {
+    width: min(100%, 340px);
+  }
+
+  .iv-mask-reveal {
+    height: 100%;
+  }
+
+  .iv-scanner {
+    display: none;
+  }
+
+  /* The mask fully covers the photo, so only its caption should show */
+  .iv-base .media-placeholder-center {
+    visibility: hidden;
+  }
+
+  .iv-annotation-1 {
+    top: 12%;
+    left: 0.75rem;
+  }
+
+  .iv-annotation-2 {
+    top: 62%;
+    right: 0.75rem;
+  }
+
+  .iv-result {
+    bottom: -1.1rem;
+    font-size: 1.25rem;
+    padding: 0.35rem 1rem;
+  }
 }

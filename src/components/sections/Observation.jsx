@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MediaPlaceholder from '../ui/MediaPlaceholder';
 import './Observation.css';
+import { sceneMotion, fluid } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,14 @@ export const Observation = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
+      // Distance the signal cards travel from centre: scaled with the viewport,
+      // but never less than what clears the (scaled-down) evidence image.
+      const orbit = () => {
+        const image = containerRef.current.querySelector('.obs-main-image');
+        return Math.max(fluid(300)(), image.offsetWidth * 0.4 + 110);
+      };
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -18,6 +26,7 @@ export const Observation = () => {
           end: '+=200%',
           scrub: 1,
           pin: true,
+          invalidateOnRefresh: true,
         }
       });
 
@@ -26,16 +35,16 @@ export const Observation = () => {
         
         // Main image enters from bottom and scales up
         .fromTo('.obs-main-image', 
-          { y: 400, scale: 0.5, opacity: 0 }, 
+          { y: fluid(400), scale: 0.5, opacity: 0 }, 
           { y: 0, scale: 0.8, opacity: 1, duration: 1, ease: 'power2.out' }, 
           '<'
         )
         
         // Extract signals (happens AFTER image enters)
-        .to('.signal-image', { x: -300, y: -200, opacity: 1, duration: 1 })
-        .to('.signal-text', { x: 300, y: -200, opacity: 1, duration: 1 }, '<')
-        .to('.signal-location', { x: -300, y: 200, opacity: 1, duration: 1 }, '<')
-        .to('.signal-community', { x: 300, y: 200, opacity: 1, duration: 1 }, '<')
+        .to('.signal-image', { x: () => -orbit(), y: fluid(-200), opacity: 1, duration: 1 })
+        .to('.signal-text', { x: orbit, y: fluid(-200), opacity: 1, duration: 1 }, '<')
+        .to('.signal-location', { x: () => -orbit(), y: fluid(200), opacity: 1, duration: 1 }, '<')
+        .to('.signal-community', { x: orbit, y: fluid(200), opacity: 1, duration: 1 }, '<')
 
         // Hold
         .to({}, { duration: 0.5 })
@@ -55,7 +64,7 @@ export const Observation = () => {
           duration: 1
         }, '-=0.5');
 
-    }, containerRef);
+    });
 
     return () => ctx.revert();
   }, []);

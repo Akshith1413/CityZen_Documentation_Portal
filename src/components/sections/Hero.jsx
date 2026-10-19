@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CINEMATIC_QUERY } from '../../utils/motion';
 import './Hero.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,17 +37,20 @@ export const Hero = () => {
         delay: 1
       });
 
-      // Parallax scroll effect for blob
-      gsap.to('.hero-blob-container', {
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1,
-        },
-        y: 150,
+      // Parallax scroll effect for blob (compact screens keep the blob in flow)
+      const mm = gsap.matchMedia();
+      mm.add(CINEMATIC_QUERY, () => {
+        gsap.to('.hero-blob-container', {
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1,
+          },
+          y: 150,
+        });
       });
-        
+
     }, heroRef);
 
     return () => ctx.revert();

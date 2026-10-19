@@ -55,9 +55,29 @@
 .mt-4 { margin-top: 1rem; }
 .mt-8 { margin-top: 2rem; border-bottom: none; }
 
-@media (max-width: 768px) {
-  .ps-container { flex-direction: column; justify-content: center; padding: 10vh 2rem; }
-  .ps-header h2 { font-size: 3rem; }
-  .ps-field-value { font-size: 1.5rem; }
-  .ps-field-list { font-size: 1.25rem; }
+@media (max-width: 768px), (max-height: 520px) {
+  .ps-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
+    gap: 2.5rem;
+  }
+
+  .ps-header,
+  .ps-content {
+    flex: none;
+  }
+
+  .ps-header h2 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .ps-field-value {
+    font-size: 1.5rem;
+  }
+
+  .ps-field-list {
+    font-size: 1.25rem;
+  }
 }

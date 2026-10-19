@@ -68,3 +68,42 @@
   font-size: 0.75rem;
   opacity: 0;
 }
+
+/* Compact layout: everything visible and stacked, no exit zoom */
+@media (max-width: 768px), (max-height: 520px) {
+  .viewport-section.finale-section {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .finale-container {
+    height: auto;
+    padding-block: 2rem;
+  }
+
+  .finale-content {
+    height: auto;
+    gap: 2.5rem;
+  }
+
+  .finale-content .finale-statement,
+  .finale-content .finale-brand,
+  .finale-content .finale-actions,
+  .finale-content .finale-meta {
+    position: static;
+    transform: none;
+    opacity: 1;
+  }
+
+  .finale-statement {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .finale-brand h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+
+  .finale-actions {
+    font-size: 0.85rem;
+  }
+}

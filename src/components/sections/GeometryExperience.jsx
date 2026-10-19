@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MediaPlaceholder from '../ui/MediaPlaceholder';
 import './GeometryExperience.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ export const GeometryExperience = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -52,7 +53,7 @@ export const GeometryExperience = () => {
       .fromTo('.geo-measure-length', { height: 0, opacity: 0 }, { height: '100%', opacity: 1, duration: 1 }, '<')
       .fromTo('.geo-stats', { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 1, stagger: 0.2 });
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

@@ -64,7 +64,45 @@
   margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-  .dc-header h2 { font-size: 2.5rem; }
-  .dc-report { font-size: 0.6rem; padding: 0.5rem; }
+/* Compact layout: the pile of reports as chips, then the merged master incident */
+@media (max-width: 768px), (max-height: 520px) {
+  .dc-container {
+    height: auto;
+    padding-top: 0;
+    gap: 2rem;
+  }
+
+  .dc-header h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .dc-visual {
+    flex-grow: 0;
+    overflow: visible;
+  }
+
+  .dc-reports {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .dc-reports .dc-report {
+    position: static;
+    white-space: normal;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .dc-reports .dc-master {
+    flex: 1 0 100%;
+    margin-top: 1rem;
+    padding: 1.25rem;
+    transform: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 20px 40px rgba(142, 18, 58, 0.1);
+    font-size: 0.75rem;
+  }
 }

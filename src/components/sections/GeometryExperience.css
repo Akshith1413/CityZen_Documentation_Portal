@@ -90,6 +90,7 @@
   position: absolute;
   top: -20px; left: 50%; transform: translateX(-50%);
   font-size: 0.75rem; color: var(--accent-primary);
+  white-space: nowrap;
 }
 
 .geo-measure-length {
@@ -104,6 +105,7 @@
   position: absolute;
   top: 50%; right: -40px; transform: translateY(-50%);
   font-size: 0.75rem; color: var(--accent-primary);
+  white-space: nowrap;
 }
 
 .geo-math-labels {
@@ -140,11 +142,97 @@
   line-height: 1;
 }
 
-@media (max-width: 768px) {
-  .geo-header { top: 10vh; left: 2rem; }
-  .geo-header h2 { font-size: 2.5rem; }
-  .geo-stats { bottom: 10vh; right: 2rem; }
-  .geo-3d-stage { width: 90vw; }
-  .geo-photo { width: 280px; height: 210px; }
-  .geo-boundary { width: 150px; height: 100px; }
+/* Compact layout: flat photo + plan-view measurement diagram, no 3D */
+@media (max-width: 768px), (max-height: 520px) {
+  .geo-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: auto;
+    gap: 2rem;
+  }
+
+  .geo-header {
+    position: static;
+  }
+
+  .geo-header h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .geo-visual {
+    height: auto;
+    perspective: none;
+  }
+
+  .geo-3d-stage {
+    width: 100%;
+    max-width: 420px;
+    height: 440px;
+    transform-style: flat;
+  }
+
+  .geo-photo {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 190px;
+    transform: none;
+  }
+
+  .geo-photo .media-placeholder {
+    min-height: 0;
+  }
+
+  .geo-plane-grid {
+    width: 100%;
+    height: 240px;
+    top: 330px;
+    transform: translate(-50%, -50%);
+  }
+
+  .geo-boundary {
+    top: 330px;
+    width: 50%;
+    height: 120px;
+    transform: translate(-50%, -50%);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(142, 18, 58, 0.25);
+  }
+
+  .geo-measure-width {
+    width: 100%;
+  }
+
+  .geo-measure-length {
+    height: 100%;
+  }
+
+  /* Sit the length label just outside the bar instead of straddling it */
+  .geo-measure-length span {
+    right: auto;
+    left: 8px;
+  }
+
+  .geo-math-labels {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    text-align: center;
+  }
+
+  .geo-stats {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    text-align: left;
+  }
+
+  .geo-stat-val {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
 }

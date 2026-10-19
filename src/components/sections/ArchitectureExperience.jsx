@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ArchitectureExperience.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const ArchitectureExperience = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -44,7 +45,7 @@ export const ArchitectureExperience = () => {
         }, (i * 1.5) + 1); // Exit starts after it has been in center
       });
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

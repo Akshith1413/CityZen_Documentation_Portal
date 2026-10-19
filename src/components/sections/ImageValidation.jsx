@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MediaPlaceholder from '../ui/MediaPlaceholder';
 import './ImageValidation.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ export const ImageValidation = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -27,7 +28,7 @@ export const ImageValidation = () => {
         .fromTo('.iv-annotation-2', { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.5 }, 1.0)
         .fromTo('.iv-result', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5 }, 1.8);
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

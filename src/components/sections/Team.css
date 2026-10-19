@@ -188,8 +188,39 @@
   }
 }
 
+/* Phones: compact horizontal cards instead of five tall photo tiles */
 @media (max-width: 480px) {
   .team-cards-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .team-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .team-card:hover {
+    transform: none;
+  }
+
+  .team-card-photo-wrapper {
+    flex: 0 0 38%;
+    aspect-ratio: auto;
+    min-height: 130px;
+    border-bottom: none;
+    border-right: 1px solid rgba(21, 21, 21, 0.1);
+  }
+
+  .team-card-info {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .team-card-name {
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
   }
 }

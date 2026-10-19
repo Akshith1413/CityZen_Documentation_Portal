@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './LanguageSignal.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const LanguageSignal = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -36,7 +37,7 @@ export const LanguageSignal = () => {
       // Show fallback chain
       .fromTo('.ls-chain', { opacity: 0 }, { opacity: 1, duration: 1 });
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './DuplicateConvergence.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const DuplicateConvergence = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -55,7 +56,15 @@ export const DuplicateConvergence = () => {
       .fromTo('.dc-vote-update', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 })
       .to('.dc-votes', { innerText: 10, snap: { innerText: 1 }, duration: 1 });
 
-    }, containerRef);
+    }, () => {
+      // Compact: reports are laid out statically, so just count the votes up.
+      gsap.to('.dc-votes', {
+        innerText: 10,
+        snap: { innerText: 1 },
+        duration: 1.2,
+        scrollTrigger: { trigger: '.dc-master', start: 'top 85%', once: true },
+      });
+    });
     return () => ctx.revert();
   }, []);
 

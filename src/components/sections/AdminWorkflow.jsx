@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MediaPlaceholder from '../ui/MediaPlaceholder';
 import './AdminWorkflow.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ export const AdminWorkflow = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -30,7 +31,7 @@ export const AdminWorkflow = () => {
         .to('.aw-map', { opacity: 0, y: -50, duration: 1 })
         .fromTo('.aw-workflow', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, '<');
         
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

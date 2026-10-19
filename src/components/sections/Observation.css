@@ -33,8 +33,8 @@
 }
 
 .obs-main-image {
-  width: 400px;
-  height: 500px;
+  width: calc(min(500px, 58vh) * 0.8);
+  height: min(500px, 58vh);
   position: absolute;
   z-index: 5;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
@@ -73,9 +73,54 @@
   z-index: 10;
 }
 
-@media (max-width: 768px) {
+/* Compact layout: static stack - headline, evidence image, 2x2 signals, result */
+@media (max-width: 768px), (max-height: 520px) {
+  .obs-container {
+    height: auto;
+    justify-content: flex-start;
+    gap: 2.5rem;
+  }
+
+  .obs-headline {
+    position: static;
+    transform: none;
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1;
+  }
+
+  .obs-interactive-area {
+    height: auto;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
   .obs-main-image {
-    width: 280px;
-    height: 350px;
+    position: relative;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .obs-signal {
+    position: relative;
+    opacity: 1;
+    min-width: 0;
+    padding: 0.75rem;
+  }
+
+  .obs-priority-result {
+    position: static;
+    grid-column: 1 / -1;
+    opacity: 1;
+    scale: 1;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: clamp(3rem, 14vw, 5rem);
   }
 }

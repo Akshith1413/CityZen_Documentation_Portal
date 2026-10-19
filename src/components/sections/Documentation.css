@@ -1,13 +1,14 @@
 .doc-section {
   background-color: var(--bg-primary);
   min-height: 100vh;
+  padding: 4rem 0;
 }
 
 .doc-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
+  min-height: calc(100vh - 8rem);
   gap: 4rem;
 }
 
@@ -87,9 +88,38 @@
   transform: scaleY(1);
 }
 
-@media (max-width: 768px) {
-  .doc-container { flex-direction: column; justify-content: center; padding-top: 10vh; }
-  .doc-headline { font-size: 2.5rem; margin-bottom: 2rem; }
-  .doc-actions { align-items: center; width: 100%; }
-  .doc-btn { padding: 1rem; font-size: 1.5rem; }
+@media (max-width: 768px), (max-height: 520px) {
+  .viewport-section.doc-section {
+    min-height: 0;
+  }
+
+  .doc-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
+    gap: 3rem;
+  }
+
+  .doc-content,
+  .doc-actions {
+    flex: none;
+  }
+
+  .doc-headline {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .doc-actions {
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .doc-btn {
+    max-width: none;
+    padding: 1rem;
+    font-size: 1.35rem;
+  }
 }

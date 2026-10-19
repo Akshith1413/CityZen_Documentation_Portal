@@ -67,18 +67,51 @@
   letter-spacing: 0.1em;
 }
 
-@media (max-width: 768px) {
-  .mc-models {
-    flex-direction: column;
-    margin-top: 20vh;
+/* Compact layout: quote, then the three model cards stacked */
+@media (max-width: 768px), (max-height: 520px) {
+  .mc-container {
+    height: auto;
+    justify-content: flex-start;
+    gap: 2.5rem;
   }
-  .mc-model {
-    padding: 1rem;
+
+  .mc-quote-container {
+    position: static;
+    transform: none;
   }
-  .mc-model h3 {
-    font-size: 1.5rem;
-  }
+
   .mc-quote {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 6.5vw, 2.25rem);
+  }
+
+  .mc-models {
+    flex-wrap: wrap;
+    margin-top: 0;
+    gap: 1rem;
+    opacity: 1;
+  }
+
+  .mc-model {
+    flex: 1 1 210px;
+    padding: 1.25rem;
+  }
+
+  .mc-model h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .mc-model-status {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .mc-model-1 {
+    border-color: var(--accent-primary);
+  }
+
+  .mc-model-2,
+  .mc-model-3 {
+    opacity: 0.7;
   }
 }

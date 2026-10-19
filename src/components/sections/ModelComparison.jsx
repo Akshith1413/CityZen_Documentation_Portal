@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ModelComparison.css';
+import { sceneMotion } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const ModelComparison = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -31,7 +32,7 @@ export const ModelComparison = () => {
         .to('.mc-model-2, .mc-model-3', { opacity: 0.2, scale: 0.9, duration: 0.5 }, '+=0.5')
         .to('.mc-model-1', { borderColor: 'var(--accent-primary)', scale: 1.05, duration: 0.5 }, '<');
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

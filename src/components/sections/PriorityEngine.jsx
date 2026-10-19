@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './PriorityEngine.css';
+import { sceneMotion, fluid } from '../../utils/motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,7 +10,7 @@ export const PriorityEngine = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    let ctx = sceneMotion(containerRef, () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -17,23 +18,24 @@ export const PriorityEngine = () => {
           end: '+=150%',
           scrub: true,
           pin: true,
+          invalidateOnRefresh: true,
         }
       });
 
       // Signals enter
-      tl.fromTo('.pe-signal-1', { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0)
-        .fromTo('.pe-signal-2', { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0.2)
-        .fromTo('.pe-signal-3', { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0.4)
-        .fromTo('.pe-signal-4', { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0.6)
+      tl.fromTo('.pe-signal-1', { x: fluid(-300), opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0)
+        .fromTo('.pe-signal-2', { x: fluid(300), opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0.2)
+        .fromTo('.pe-signal-3', { x: fluid(-300), opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0.4)
+        .fromTo('.pe-signal-4', { x: fluid(300), opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, 0.6)
         
         // Funnel down
-        .to('.pe-signal', { y: 200, scale: 0.5, opacity: 0, duration: 1, stagger: 0.1 }, 1.5)
+        .to('.pe-signal', { y: fluid(200), scale: 0.5, opacity: 0, duration: 1, stagger: 0.1 }, 1.5)
         
         // Show Score
         .fromTo('.pe-score-container', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 1 }, 2)
         .fromTo('.pe-band', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 2.5);
 
-    }, containerRef);
+    });
     return () => ctx.revert();
   }, []);
 

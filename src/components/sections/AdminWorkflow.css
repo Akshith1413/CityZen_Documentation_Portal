@@ -64,11 +64,43 @@
   flex-grow: 1;
 }
 
-@media (max-width: 768px) {
+/* Compact layout: the four workflow layers as stacked cards instead of a crossfade */
+@media (max-width: 768px), (max-height: 520px) {
   .aw-container {
     flex-direction: column;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: auto;
+    gap: 2.5rem;
   }
-  .aw-header h2 { font-size: 2.5rem; }
-  .aw-visual { width: 100%; height: 40vh; }
+
+  .aw-header {
+    flex: none;
+  }
+
+  .aw-header h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .aw-visual {
+    flex: none;
+    height: auto;
+    perspective: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 1rem;
+  }
+
+  .aw-visual .aw-layer {
+    position: relative;
+    height: auto;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .aw-layer .aw-img {
+    min-height: 170px;
+  }
 }
