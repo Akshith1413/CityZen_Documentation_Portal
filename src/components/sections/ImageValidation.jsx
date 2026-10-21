@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MediaPlaceholder from '../ui/MediaPlaceholder';
+import MediaImage from '../ui/MediaImage';
 import './ImageValidation.css';
 import { sceneMotion } from '../../utils/motion';
 
@@ -53,12 +53,12 @@ export const ImageValidation = () => {
         <div className="iv-visual-col">
           <div className="iv-image-container">
             {/* Base Image */}
-            <MediaPlaceholder label="ORIGINAL PHOTO" metadata="VAL-01" className="iv-base" />
+            <MediaImage src="/images/validation/val-original.jpg" alt="Original citizen photo of a pothole" className="iv-base" />
             
             {/* Mask layer */}
             <div className="iv-mask-reveal">
               <div className="iv-mask-content">
-                <MediaPlaceholder label="SEGMENTATION MASK" metadata="SAM3" type="image" className="iv-segmented" />
+                <MediaImage src="/images/validation/val-sam3-mask.png" alt="Pothole photo with SAM3 segmentation mask overlay" className="iv-segmented" />
               </div>
             </div>
 

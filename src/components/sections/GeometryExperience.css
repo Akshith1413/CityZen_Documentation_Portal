@@ -181,10 +181,6 @@
     transform: none;
   }
 
-  .geo-photo .media-placeholder {
-    min-height: 0;
-  }
-
   .geo-plane-grid {
     width: 100%;
     height: 240px;

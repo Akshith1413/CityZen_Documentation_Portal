@@ -1,0 +1,9 @@
+Add your five portraits here. No generated people or substitute headshots are included.
+
+team-keshav.jpg
+team-vimal.jpg
+team-akshith.jpg
+team-kokul.jpg
+team-arun.jpg
+
+Each must be 800 x 920 pixels, JPG. Centre the face in the upper half, shoulders-up, with a plain background and consistent lighting.

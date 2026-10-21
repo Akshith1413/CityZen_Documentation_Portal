@@ -72,12 +72,9 @@
 .iv-mask-content {
   position: absolute;
   top: 0; left: 0; width: 100%;
-  height: 100%;
-  /* Force height to match parent aspect ratio so it doesn't squash */
-}
-.iv-mask-content .media-placeholder {
-  background-color: rgba(142, 18, 58, 0.1); /* Subtle burgundy tint */
-  border-color: var(--accent-primary);
+  /* Full photo height (the reveal clips it) so the mask never squashes while the reveal grows */
+  height: auto;
+  aspect-ratio: 3 / 4;
 }
 
 .iv-scanner {
@@ -169,11 +166,6 @@
 
   .iv-scanner {
     display: none;
-  }
-
-  /* The mask fully covers the photo, so only its caption should show */
-  .iv-base .media-placeholder-center {
-    visibility: hidden;
   }
 
   .iv-annotation-1 {

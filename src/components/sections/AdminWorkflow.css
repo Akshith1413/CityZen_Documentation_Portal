@@ -61,7 +61,9 @@
 }
 
 .aw-img {
-  flex-grow: 1;
+  flex: 1 1 0;
+  height: auto;
+  min-height: 0;
 }
 
 /* Compact layout: the four workflow layers as stacked cards instead of a crossfade */

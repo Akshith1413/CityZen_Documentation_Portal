@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Team.css';
@@ -10,36 +10,38 @@ const teamMembers = [
     name: 'Keshav S',
     rollNo: 'CB.SC.U4CSE23222',
     initials: 'KS',
-    image: null
+    image: '/images/team/team-keshav.jpg'
   },
   {
     name: 'Vimal HariHar SK',
     rollNo: 'CB.SC.U4CSE21002',
     initials: 'VH',
-    image: null
+    image: '/images/team/team-vimal.jpg'
   },
   {
     name: 'Arun N',
     rollNo: 'CB.SC.U4CSE21003',
     initials: 'AN',
-    image: null
+    image: '/images/team/team-arun.jpg'
   },
   {
     name: 'Kokul M',
     rollNo: 'CB.SC.U4CSE21004',
     initials: 'KM',
-    image: null
+    image: '/images/team/team-kokul.jpg'
   },
   {
     name: 'Ravula Akshith',
     rollNo: 'CB.SC.U4CSE23648',
     initials: 'RA',
-    image: null
+    image: '/images/team/team-akshith.jpg'
   }
 ];
 
 export const Team = () => {
   const containerRef = useRef(null);
+  // Portraits are added to public/images/team later; fall back to the initials card until then
+  const [missingPhotos, setMissingPhotos] = useState({});
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -80,8 +82,13 @@ export const Team = () => {
 
               {/* Photo Area */}
               <div className="team-card-photo-wrapper">
-                {member.image ? (
-                  <img src={member.image} alt={member.name} className="team-card-img" />
+                {member.image && !missingPhotos[member.image] ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="team-card-img"
+                    onError={() => setMissingPhotos((prev) => ({ ...prev, [member.image]: true }))}
+                  />
                 ) : (
                   <div className="team-card-photo-placeholder font-mono">
                     <div className="team-card-avatar-icon">

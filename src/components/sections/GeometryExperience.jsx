@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MediaPlaceholder from '../ui/MediaPlaceholder';
+import MediaImage from '../ui/MediaImage';
 import './GeometryExperience.css';
 import { sceneMotion } from '../../utils/motion';
 
@@ -79,7 +79,7 @@ export const GeometryExperience = () => {
             <div className="geo-plane-grid"></div>
             
             <div className="geo-photo">
-              <MediaPlaceholder label="STREET VIEW" metadata="GEO-01" />
+              <MediaImage src="/images/geometry/geo-street-view.jpg" alt="Street view of the pothole used for geometry estimation" />
             </div>
 
             <div className="geo-boundary">

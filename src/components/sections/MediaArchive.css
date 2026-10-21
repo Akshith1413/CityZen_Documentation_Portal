@@ -75,10 +75,6 @@
     align-self: center;
   }
 
-  .ma-visual .media-placeholder {
-    min-height: 0;
-  }
-
   .ma-meta {
     flex-wrap: wrap;
     gap: 0.25rem 1rem;

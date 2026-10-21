@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import MediaPlaceholder from '../ui/MediaPlaceholder';
+import MediaImage from '../ui/MediaImage';
 import './VideoSection.css';
 
 export const VideoSection = () => {
@@ -30,12 +30,8 @@ export const VideoSection = () => {
         <div className="vs-player">
           {/* Main video area */}
           <div className="vs-video-container" onClick={togglePlay}>
-            {/* The user will swap this with a real <video> tag pointing to /assets/cityzen-demo.mp4 */}
-            <MediaPlaceholder 
-              label={isPlaying ? "PLAYING: cityzen-demo.mp4" : "PAUSED: cityzen-demo.mp4"} 
-              type="video" 
-              metadata="VID-01" 
-            />
+            {/* Poster frame; swap for a <video poster="/images/video/cityzen-demo-poster.jpg"> once cityzen-demo.mp4 exists */}
+            <MediaImage src="/images/video/cityzen-demo-poster.jpg" alt="CityZen demo film poster" />
             
             {!isPlaying && (
               <div className="vs-play-overlay">

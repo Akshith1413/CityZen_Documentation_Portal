@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MediaPlaceholder from '../ui/MediaPlaceholder';
+import MediaImage from '../ui/MediaImage';
 import './Observation.css';
 import { sceneMotion, fluid } from '../../utils/motion';
 
@@ -78,7 +78,7 @@ export const Observation = () => {
 
         <div className="obs-interactive-area">
           <div className="obs-main-image">
-            <MediaPlaceholder label="RAW CITIZEN REPORT" metadata="OBS-01" />
+            <MediaImage src="/images/observation/obs-citizen-report.jpg" alt="Raw citizen pothole report with photo, text and location" />
           </div>
 
           <div className="obs-signal signal-image font-mono">

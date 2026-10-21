@@ -113,11 +113,7 @@
     font-size: clamp(2.25rem, 10vw, 3rem);
   }
 
-  .vs-video-container .media-placeholder {
-    min-height: 0;
-  }
-
-  /* Dock the button bottom-right so it clears the placeholder caption */
+  /* Dock the button bottom-right so it clears the poster artwork */
   .vs-play-overlay {
     align-items: flex-end;
     justify-content: flex-end;

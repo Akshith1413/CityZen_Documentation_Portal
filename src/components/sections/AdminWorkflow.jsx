@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MediaPlaceholder from '../ui/MediaPlaceholder';
+import MediaImage from '../ui/MediaImage';
 import './AdminWorkflow.css';
 import { sceneMotion } from '../../utils/motion';
 
@@ -53,22 +53,22 @@ export const AdminWorkflow = () => {
         <div className="aw-visual">
           <div className="aw-layer aw-raw">
             <div className="aw-layer-title font-condensed text-secondary">RAW COMPLAINTS</div>
-            <MediaPlaceholder label="UNSTRUCTURED DATA" metadata="ADMIN-01" className="aw-img" />
+            <MediaImage src="/images/admin/admin-raw-complaints.png" alt="Admin inbox of raw, unranked citizen complaints" className="aw-img" />
           </div>
 
           <div className="aw-layer aw-queue">
             <div className="aw-layer-title font-condensed text-secondary">PRIORITIZED QUEUE</div>
-            <MediaPlaceholder label="ADMIN DASHBOARD" metadata="ADMIN-02" className="aw-img" />
+            <MediaImage src="/images/admin/admin-dashboard-queue.png" alt="Admin dashboard with the prioritized complaint queue" className="aw-img" />
           </div>
 
           <div className="aw-layer aw-map">
             <div className="aw-layer-title font-condensed text-secondary">SPATIAL HEATMAP</div>
-            <MediaPlaceholder label="MAP VIEW" metadata="ADMIN-03" className="aw-img" />
+            <MediaImage src="/images/admin/admin-map-heatmap.png" alt="Map view of complaint locations" className="aw-img" />
           </div>
 
           <div className="aw-layer aw-workflow">
             <div className="aw-layer-title font-condensed text-secondary">RESOLUTION WORKFLOW</div>
-            <MediaPlaceholder label="COMPLAINT DETAIL" metadata="ADMIN-04" className="aw-img" />
+            <MediaImage src="/images/admin/admin-complaint-detail.png" alt="Complaint detail and resolution workflow" className="aw-img" />
           </div>
         </div>
 
