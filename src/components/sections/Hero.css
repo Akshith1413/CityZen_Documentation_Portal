@@ -40,7 +40,8 @@
 .hero-blob-container {
   position: absolute;
   bottom: 10vh;
-  right: 10%;
+  /* Stay tied to the 1440px content column on ultra-wide screens */
+  right: max(10%, calc((100% - 1440px) / 2 + 4rem));
   width: 35vw;
   height: 35vw;
   max-width: 500px;
@@ -106,7 +107,7 @@
 }
 
 /* Compact layout: title, then the blob in normal flow so they never overlap */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .viewport-section.hero-section {
     min-height: 100vh;
     min-height: 100svh;

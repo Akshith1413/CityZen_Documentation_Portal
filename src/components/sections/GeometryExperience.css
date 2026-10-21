@@ -149,7 +149,7 @@
 }
 
 /* Compact layout: flat photo + plan-view measurement diagram, no 3D */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .geo-container {
     flex-direction: column;
     align-items: stretch;

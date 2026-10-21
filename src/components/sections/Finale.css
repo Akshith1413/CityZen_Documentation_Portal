@@ -70,7 +70,7 @@
 }
 
 /* Compact layout: everything visible and stacked, no exit zoom */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .viewport-section.finale-section {
     min-height: 100vh;
     min-height: 100svh;

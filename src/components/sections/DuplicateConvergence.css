@@ -2,7 +2,8 @@
   background-color: var(--bg-primary);
 }
 
-.dc-container {
+/* Doubled class so the section padding beats .archive-container's shorthand padding */
+.archive-container.dc-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,11 +66,16 @@
 }
 
 /* Compact layout: the pile of reports as chips, then the merged master incident */
-@media (max-width: 768px), (max-height: 520px) {
-  .dc-container {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
+  .archive-container.dc-container {
     height: auto;
     padding-top: 0;
     gap: 2rem;
+  }
+
+  .dc-header h2,
+  .dc-header p {
+    text-align: left;
   }
 
   .dc-header h2 {

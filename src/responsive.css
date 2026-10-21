@@ -18,7 +18,7 @@
  *
  * Keep this query in sync with COMPACT_QUERY in src/utils/motion.js.
  */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .archive-container {
     padding: 0 clamp(1rem, 5vw, 2rem);
   }

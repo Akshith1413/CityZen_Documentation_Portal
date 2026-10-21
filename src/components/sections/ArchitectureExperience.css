@@ -22,6 +22,10 @@
   font-size: clamp(2rem, 4vw, 4rem);
 }
 
+.arch-header p {
+  margin-top: 0.5rem;
+}
+
 .arch-visual {
   flex-grow: 1;
   display: flex;
@@ -91,7 +95,7 @@
 .arch-layer-5 { transform: translateZ(-1200px); }
 
 /* Compact layout: the five layers as a plain vertical stack, no 3D fly-through */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .arch-container {
     height: auto;
     gap: 2rem;
@@ -100,6 +104,11 @@
   .arch-header {
     position: static;
     pointer-events: auto;
+  }
+
+  .arch-header h2,
+  .arch-header p {
+    text-align: left;
   }
 
   .arch-header h2 {

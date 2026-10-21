@@ -67,7 +67,7 @@
 }
 
 /* Compact layout: the four workflow layers as stacked cards instead of a crossfade */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .aw-container {
     flex-direction: column;
     align-items: stretch;

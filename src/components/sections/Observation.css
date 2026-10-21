@@ -74,7 +74,7 @@
 }
 
 /* Compact layout: static stack - headline, evidence image, 2x2 signals, result */
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .obs-container {
     height: auto;
     justify-content: flex-start;

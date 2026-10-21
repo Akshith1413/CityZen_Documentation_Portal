@@ -53,22 +53,22 @@ export const AdminWorkflow = () => {
         <div className="aw-visual">
           <div className="aw-layer aw-raw">
             <div className="aw-layer-title font-condensed text-secondary">RAW COMPLAINTS</div>
-            <MediaImage src="/images/admin/admin-raw-complaints.png" alt="Admin inbox of raw, unranked citizen complaints" className="aw-img" />
+            <MediaImage src="/images/admin/admin-raw-complaints.png" alt="Admin inbox of raw, unranked citizen complaints" fit="contain" position="top" className="aw-img" />
           </div>
 
           <div className="aw-layer aw-queue">
             <div className="aw-layer-title font-condensed text-secondary">PRIORITIZED QUEUE</div>
-            <MediaImage src="/images/admin/admin-dashboard-queue.png" alt="Admin dashboard with the prioritized complaint queue" className="aw-img" />
+            <MediaImage src="/images/admin/admin-dashboard-queue.png" alt="Admin dashboard with the prioritized complaint queue" fit="contain" position="top" className="aw-img" />
           </div>
 
           <div className="aw-layer aw-map">
             <div className="aw-layer-title font-condensed text-secondary">SPATIAL HEATMAP</div>
-            <MediaImage src="/images/admin/admin-map-heatmap.png" alt="Map view of complaint locations" className="aw-img" />
+            <MediaImage src="/images/admin/admin-map-heatmap.png" alt="Map view of complaint locations" fit="contain" position="top" className="aw-img" />
           </div>
 
           <div className="aw-layer aw-workflow">
             <div className="aw-layer-title font-condensed text-secondary">RESOLUTION WORKFLOW</div>
-            <MediaImage src="/images/admin/admin-complaint-detail.png" alt="Complaint detail and resolution workflow" className="aw-img" />
+            <MediaImage src="/images/admin/admin-complaint-detail.png" alt="Complaint detail and resolution workflow" fit="contain" position="top" className="aw-img" />
           </div>
         </div>
 

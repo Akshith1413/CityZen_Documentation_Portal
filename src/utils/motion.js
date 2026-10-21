@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 // Keep these in sync with the "compact layout" media query used across the CSS:
-//   @media (max-width: 768px), (max-height: 520px)
-// Compact screens (phones, small tablets in portrait, phones in landscape) get a
+//   @media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait)
+// Compact screens (phones, tablets in portrait, phones in landscape) get a
 // stacked, static layout. Everything else gets the pinned, scrubbed scenes.
-export const COMPACT_QUERY = '(max-width: 768px), (max-height: 520px)';
-export const CINEMATIC_QUERY = '(min-width: 769px) and (min-height: 521px)';
+export const COMPACT_QUERY = '(max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait)';
+export const CINEMATIC_QUERY = '(min-width: 769px) and (min-height: 521px) and (orientation: landscape), (min-width: 1025px) and (min-height: 521px)';
 
 // Pixel offsets in the cinematic timelines were authored for a 1440x900 canvas.
 // Scale them down on smaller viewports so they never push content off-screen.

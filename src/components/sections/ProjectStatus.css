@@ -55,7 +55,7 @@
 .mt-4 { margin-top: 1rem; }
 .mt-8 { margin-top: 2rem; border-bottom: none; }
 
-@media (max-width: 768px), (max-height: 520px) {
+@media (max-width: 768px), (max-height: 520px), (max-width: 1024px) and (orientation: portrait) {
   .ps-container {
     flex-direction: column;
     align-items: stretch;
