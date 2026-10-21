@@ -1,0 +1,192 @@
+[
+  {
+    "file": "public/images/hero/hero-city.jpg",
+    "width": 1000,
+    "height": 1000,
+    "bytes": 288877,
+    "kind": "AI-generated photo",
+    "notes": "Natural street photo; independent hero incident.",
+    "sha256": "e36de45a971e5f40911fc94af32850aab5090f5b574f081e1be62172fd0a24db",
+    "required": true
+  },
+  {
+    "file": "public/images/validation/val-original.jpg",
+    "width": 900,
+    "height": 1200,
+    "bytes": 260237,
+    "kind": "AI-generated photo",
+    "notes": "Shared demonstration incident, not an actual submitted report.",
+    "sha256": "93d9048605464f5f8bbacc4a86903ca0395c79c6fa640a910d4a809e9d96e676",
+    "required": true
+  },
+  {
+    "file": "public/images/geometry/geo-street-view.jpg",
+    "width": 1200,
+    "height": 900,
+    "bytes": 272778,
+    "kind": "AI-generated companion photo",
+    "notes": "Same reference pothole from a wider angle; approximate perspective.",
+    "sha256": "f761febbaa8b77c21d570c946e722a7e5e42e7d27e536ca7c4a09bc2a2516b54",
+    "required": true
+  },
+  {
+    "file": "public/images/validation/val-sam3-mask.png",
+    "width": 900,
+    "height": 1200,
+    "bytes": 381730,
+    "kind": "Illustrative segmentation",
+    "notes": "Baked #8E123A at 40% over exact original; generated silhouette, not SAM3 inference.",
+    "sha256": "dd02277b83d2c9d38da8aa5694376a907c3e202d8b61011642b015ca39c6d7d7",
+    "required": true
+  },
+  {
+    "file": "public/images/observation/obs-citizen-report.jpg",
+    "width": 800,
+    "height": 1000,
+    "bytes": 193641,
+    "kind": "Project-styled illustrative report",
+    "notes": "Uses the shared generated pothole. Not a screenshot of a real submission.",
+    "sha256": "7baa96dbdfe0cab975f8f33e2a3b4de99531a603f1e3b5a1a82695812d76fa09",
+    "required": true
+  },
+  {
+    "file": "public/images/archive/ai-sam3-segmentation.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 255977,
+    "kind": "Technical illustration",
+    "notes": "Original and generated mask use identical crops; no claimed live SAM3 output.",
+    "sha256": "15e2420982a24c6727f2fb0573be9dd73f9dc58ef761a5b79b801a07a1fd8210",
+    "required": true
+  },
+  {
+    "file": "public/images/archive/ai-pothole-geometry.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 356173,
+    "kind": "Technical illustration",
+    "notes": "Uses brief values W 1.2 m, L 0.8 m, area 0.96 m², shallow depth example; not a measurement of the generated scene.",
+    "sha256": "b79345b3074cf4a7b9a7d1875f360bf65e73aa0d192969efa3401ea6bb8f6e93",
+    "required": true
+  },
+  {
+    "file": "public/images/archive/ai-priority-ahp.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 50861,
+    "kind": "Score diagram",
+    "notes": "Brief weights 43/33/14/10; example input 92/86/80/70 gives 86.14. Five bands are brief vocabulary, not current UI taxonomy.",
+    "sha256": "7da41e15e48963057ca52d53c20f81c3ca3158b55a43a4bfe973bb4a4a13aefb",
+    "required": true
+  },
+  {
+    "file": "public/images/archive/sys-architecture.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 82111,
+    "kind": "Architecture diagram",
+    "notes": "Five requested layers and all specified technology labels.",
+    "sha256": "6b474485896d24b91ec27c602d90d775bcf3765b7735706fd7d58c871570ce6a",
+    "required": true
+  },
+  {
+    "file": "public/images/archive/app-submission-flow.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 167822,
+    "kind": "Project-based UI illustration",
+    "notes": "Four conceptual phone screens following the document order; not an Expo screenshot. Categories, privacy options and monochrome design follow source.",
+    "sha256": "af30db38579dece8fe4463597792db0ed1fbc4ae8a5b4dd48e4526df49a99aef",
+    "required": true
+  },
+  {
+    "file": "public/images/admin/admin-raw-complaints.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 65783,
+    "kind": "Actual CityZen screenshot",
+    "notes": "/admin/complaints · Unfiltered arrival-order registry. Current UI also shows severity scores.",
+    "sha256": "0cc79e3a39362b93a55f42c729e34e44604e957e3419762b256f9052d581e64b",
+    "required": true
+  },
+  {
+    "file": "public/images/admin/admin-dashboard-queue.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 51466,
+    "kind": "Actual CityZen screenshot",
+    "notes": "/admin/priority · Live queue sorted high to low. Current build has four score tiers; top cohort shares score 81.",
+    "sha256": "a5fdabd0776dbaba19e4f5bd1169a1870d5be6cc3f266a44e9e2fc28435aa6c0",
+    "required": true
+  },
+  {
+    "file": "public/images/admin/admin-map-heatmap.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 238277,
+    "kind": "Actual CityZen screenshot",
+    "notes": "/admin/map · Live Google basemap at Chennai neighbourhood scale; overlapping markers, no density layer implemented.",
+    "sha256": "6b700c15fedd70b3871bf08fc52bb86d72cf72acf72464bda3ae24179704fd9c",
+    "required": true
+  },
+  {
+    "file": "public/images/admin/admin-complaint-detail.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 101766,
+    "kind": "Actual CityZen screenshot",
+    "notes": "/admin/complaints/:id · Real in-progress dossier with photograph and geometry. Current UI has status controls rather than the brief three-stage tabs. Explain AI currently returns a resource-not-found error.",
+    "sha256": "6841d62f2de3cc4e0ade7597952d8fe6c1ef1e7a4a62fb76b6c7120cd9446ac3",
+    "required": true
+  },
+  {
+    "file": "public/images/video/cityzen-demo-poster.jpg",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 101123,
+    "kind": "Actual CityZen screenshot",
+    "notes": "Admin dashboard still; no video generated or screen recording requested.",
+    "sha256": "98a52e76eec21a0545e7ba224535849839e2172689a203fb021117603bb98d17",
+    "required": true
+  },
+  {
+    "file": "optional/presentation/admin-raw-complaints.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 74827,
+    "kind": "Illustrative presentation alternative",
+    "notes": "Matches the unranked raw-data story. Demo report text and times, not a live inbox.",
+    "sha256": "4dbedc8a50102e492f81c7aa2f3593186cada7b52851140e56202d9aba18b45e",
+    "required": false
+  },
+  {
+    "file": "optional/presentation/admin-dashboard-queue.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 99378,
+    "kind": "Screenshot presentation composite",
+    "notes": "Real queue plus brief five-band legend. Live tier taxonomy remains unchanged.",
+    "sha256": "8a0a55c78d0ae2b6cbf465c8dd68f53589549c508f5e7afda9fe78c7819781d9",
+    "required": false
+  },
+  {
+    "file": "optional/presentation/admin-map-heatmap.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 217024,
+    "kind": "Screenshot with illustrative analytical overlay",
+    "notes": "Real basemap and portal capture, with an editorial radial field at the observed overlapping-marker location. Not a calculated live heatmap; does not imply new hotspots.",
+    "sha256": "59d80aa87515c46c51c069d8206dcbe367949c6ad74b87e06e844da439bfe46d",
+    "required": false
+  },
+  {
+    "file": "optional/presentation/admin-complaint-detail.png",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 282926,
+    "kind": "Screenshot presentation composite",
+    "notes": "Actual dossier plus a clearly marked conceptual three-stage assessment panel using the shared generated pothole. Live app lacks those tabs; its Explain AI service failed.",
+    "sha256": "07a3134ca236e8eea1cff4029ff66667c73a597570a46d3dcf1928368a0bd216",
+    "required": false
+  }
+]

@@ -1,0 +1,51 @@
+CITYZEN WEBSITE IMAGE PACK
+Prepared 21 October 2026
+
+CONTENTS
+15 required image files, excluding the five team portraits, plus 4 optional presentation alternatives. The 15 include the video poster. All dimensions and file formats match the image list. No website code or database records were modified.
+
+INSTALL
+Copy public/images into your website public folder. Use /images/<section>/<filename> in image URLs. Admin screenshots are intentionally stored once; the Admin Workflow and Media Archive should reference the same file. See asset-manifest.csv for every exact path and size.
+
+PRIMARY FILES
+Hero: /images/hero/hero-city.jpg (1000 x 1000 JPG)
+Observation: /images/observation/obs-citizen-report.jpg (800 x 1000 JPG)
+Validation: /images/validation/val-original.jpg and val-sam3-mask.png (900 x 1200)
+Geometry: /images/geometry/geo-street-view.jpg (1200 x 900 JPG)
+Admin Workflow: four PNGs in /images/admin (1920 x 1080)
+Media Archive: five new PNGs in /images/archive (1920 x 1080), plus reuse three admin files
+Video poster: /images/video/cityzen-demo-poster.jpg (1920 x 1080)
+
+GALLERY MAPPING
+FIG 01 archive/app-submission-flow.png
+FIG 02 admin/admin-dashboard-queue.png
+FIG 03 admin/admin-complaint-detail.png
+FIG 04 archive/ai-sam3-segmentation.png
+FIG 05 archive/ai-pothole-geometry.png
+FIG 06 archive/ai-priority-ahp.png
+FIG 07 admin/admin-map-heatmap.png
+FIG 08 archive/sys-architecture.png
+All paths above are relative to public/images.
+
+ACTUAL CAPTURES AND ILLUSTRATIONS
+The four primary admin PNGs and video poster are actual captures of CityZen running at localhost:5173 using the authorized account. They are not AI-generated interfaces. They preserve the available build. Their source data was not changed for this pack.
+The hero, validation pothole and wider companion view were generated using the built-in image generation tool. The same generated pothole reference is used in Observation, Validation, Geometry, and gallery FIG 04-05. Hero is a separate street photo.
+Observation is a project-styled demonstration report using the generated incident, not an actual submitted report. Submission Flow is a diagram of four phone screens reconstructed using the project's monochrome design, category names and location privacy options, not a native Expo capture. These were necessary to keep the same generated incident across the website story.
+The mask is an illustrative generated segmentation silhouette, cleaned and composited onto the exact original photo crop at #8E123A / 40% opacity, with an outline. It is not a model inference or validation claim. Geometry values (1.2 m, 0.8 m, 0.96 m², shallow depth) reproduce the brief's demonstration, not physical measurements inferred from a photograph. AHP uses the brief's 43/33/14/10 weights; illustrative inputs 92/86/80/70 yield 86.14/100. Architecture follows the five requested layers.
+
+RUNNING BUILD DIFFERENCES
+1. The raw inbox already displays severity scores. It remains unfiltered and in arrival order.
+2. The queue has four tiers (Critical, Elevated/High, Moderate, Routine/Low), not the brief's five bands ending in Minimal.
+3. The map shows status markers, not a calculated heat layer. Several Chennai reports overlap at one location; some other records use zero coordinates. The capture is framed on the populated Chennai location.
+4. The detail UI uses status controls instead of three named stage tabs. Explain AI returned: 'Requested Roboflow resource not found.' A broken AI dialog is not included as a finished asset.
+For the narrative requested by the document, optional/presentation contains four clearly identified alternatives: an unranked demo inbox collage, actual queue plus five-band legend, actual map plus illustrative density overlay, and actual dossier plus an illustrative Assessment panel. These are presentation composites, not evidence that the live build implements those features. Use them only when that presentation treatment suits your page.
+
+TEAM PORTRAITS
+Deliberately omitted: Keshav, Vimal, Akshith, Kokul, Arun. Add 800 x 920 JPGs with the exact names in public/images/team/ADD-YOUR-PHOTOS.txt. No guide portrait was invented; the brief describes that as an optional future slot.
+
+VIDEO AND OUT-OF-SCOPE NOTES
+This is an image ZIP. The poster is included; the 3:45 MP4 is not. Favicon changes, link repairs and website component edits mentioned in the document were not requested and are not applied.
+
+FILES AND QUALITY
+Every raster has its exact specified pixel dimensions and aspect ratio. PNG is used for screenshots, masks and diagrams; JPG for photos and poster. Images were compressed for web use. Most are under 300 KB; detailed mask/geometry files may be slightly above the approximate 300 KB target to retain the road texture. Exact byte counts and SHA-256 hashes are in asset-manifest.json.
+The complete prompts are in generation-prompts.json. No credentials are included.

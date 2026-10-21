@@ -78,6 +78,12 @@
   pointer-events: none;
 }
 
+/* Pothole crop sits flat on the ground plane inside the extracted boundary */
+.geo-boundary-photo {
+  position: absolute;
+  top: 0; left: 0;
+}
+
 .geo-measure-width {
   position: absolute;
   top: -20px;

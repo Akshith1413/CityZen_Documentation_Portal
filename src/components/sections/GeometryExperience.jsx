@@ -83,6 +83,7 @@ export const GeometryExperience = () => {
             </div>
 
             <div className="geo-boundary">
+              <MediaImage src="/images/geometry/geo-pothole-crop.jpg" alt="Pothole rim extracted from the street view photo" className="geo-boundary-photo" />
               <div className="geo-measure-width">
                 <span className="font-mono">W: 1.2m</span>
               </div>
