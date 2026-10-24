@@ -58,10 +58,10 @@ export const Documentation = () => {
         </div>
 
         <div className="doc-actions">
-          <a href="[PLACEHOLDER_SRS_URL]" target="_blank" rel="noreferrer" className="doc-btn font-condensed">
+          <a href="/CITYZEN_SRS.pdf" target="_blank" rel="noreferrer" className="doc-btn font-condensed">
             VIEW SRS
           </a>
-          <a href="[PLACEHOLDER_GITHUB_URL]" target="_blank" rel="noreferrer" className="doc-btn font-condensed">
+          <a href="https://github.com/KodeWithKeshav/CityZen" target="_blank" rel="noreferrer" className="doc-btn font-condensed">
             GITHUB REPOSITORY
           </a>
           <a href="#video" className="doc-btn font-condensed">
