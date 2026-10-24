@@ -14,19 +14,19 @@ const teamMembers = [
   },
   {
     name: 'Vimal HariHar SK',
-    rollNo: 'CB.SC.U4CSE21002',
+    rollNo: 'CB.SC.U4CSE23254',
     initials: 'VH',
     image: '/images/team/team-vimal.jpg'
   },
   {
     name: 'Arun N',
-    rollNo: 'CB.SC.U4CSE21003',
+    rollNo: 'CB.SC.U4CSE23406',
     initials: 'AN',
     image: '/images/team/team-arun.jpg'
   },
   {
     name: 'Kokul M',
-    rollNo: 'CB.SC.U4CSE21004',
+    rollNo: 'CB.SC.U4CSE23462',
     initials: 'KM',
     image: '/images/team/team-kokul.jpg'
   },

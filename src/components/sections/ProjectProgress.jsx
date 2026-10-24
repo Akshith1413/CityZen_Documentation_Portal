@@ -80,7 +80,7 @@ export const ProjectProgress = () => {
       // Counter animation for main percentage
       const counter = { val: 0 };
       gsap.to(counter, {
-        val: 85,
+        val: 90,
         duration: 2,
         ease: 'power3.out',
         scrollTrigger: {
@@ -104,7 +104,7 @@ export const ProjectProgress = () => {
           duration: 0.7,
           scrollTrigger: {
             trigger: '.prog-grid-done',
-            start: 'top 85%',
+            start: 'top 90%',
           }
         }
       );
@@ -119,7 +119,7 @@ export const ProjectProgress = () => {
           duration: 0.7,
           scrollTrigger: {
             trigger: '.prog-grid-future',
-            start: 'top 85%',
+            start: 'top 90%',
           }
         }
       );
@@ -150,7 +150,7 @@ export const ProjectProgress = () => {
         <div className="prog-kpi-card depth-layer-1">
           <div className="prog-kpi-left">
             <div className="prog-kpi-metric font-display">
-              <span ref={percentRef} className="prog-percent-num">85%</span>
+              <span ref={percentRef} className="prog-percent-num">90%</span>
               <span className="prog-percent-label font-mono text-accent">COMPLETE</span>
             </div>
             <div className="prog-kpi-caption font-serif text-secondary">
@@ -161,7 +161,7 @@ export const ProjectProgress = () => {
           <div className="prog-kpi-right font-mono">
             <div className="prog-bar-wrapper">
               <div className="prog-bar-track">
-                <div className="prog-bar-fill" style={{ width: '85%' }}></div>
+                <div className="prog-bar-fill" style={{ width: '90%' }}></div>
               </div>
               <div className="prog-bar-legend">
                 <span>0% INTAKE</span>

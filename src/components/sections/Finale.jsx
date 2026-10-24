@@ -15,20 +15,20 @@ export const Finale = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: '+=100%',
+          end: '+=200%',
           scrub: true,
           pin: true,
         }
       });
 
+      // Statement plays and fully clears before the brand block appears, so they never overlap.
+      // The timeline ends on CITYZEN; no exit fade, so the page stops there.
       tl.fromTo('.finale-statement', { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1 })
-        .to('.finale-statement', { y: -100, opacity: 0.2, duration: 1 })
-        .fromTo('.finale-brand', { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '<')
+        .to('.finale-statement', { opacity: 1, duration: 0.8 })
+        .to('.finale-statement', { y: -100, opacity: 0, duration: 1 })
+        .fromTo('.finale-brand', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
         .fromTo('.finale-actions', { opacity: 0 }, { opacity: 1, duration: 1 })
-        .fromTo('.finale-meta', { opacity: 0 }, { opacity: 1, duration: 1 })
-        
-        // Final zoom out
-        .to(containerRef.current, { scale: 0.8, opacity: 0, duration: 2 });
+        .fromTo('.finale-meta', { opacity: 0 }, { opacity: 1, duration: 1 });
 
     });
     return () => ctx.revert();

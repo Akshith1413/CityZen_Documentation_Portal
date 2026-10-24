@@ -33,7 +33,7 @@
 
 .finale-brand {
   position: absolute;
-  top: 40%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -52,7 +52,7 @@
 
 .finale-actions {
   position: absolute;
-  top: 70%;
+  top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1rem;
