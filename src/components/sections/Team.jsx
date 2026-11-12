@@ -34,7 +34,7 @@ const teamMembers = [
     name: 'Ravula Akshith',
     rollNo: 'CB.SC.U4CSE23648',
     initials: 'RA',
-    image: '/images/team/team-akshith.jpg'
+    image: '/images/team/team-akshith.png'
   }
 ];
 
